@@ -1,0 +1,143 @@
+.user {
+  background-color: rgb(248, 250, 255);
+  height: 93vh;
+
+  .at-grid__flex .content-inner__img {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__login {
+    height: 50px;
+    width: 100px;
+    background-color: #e1e1e1;
+    font-size: 20px;
+  }
+}
+
+.user__getuserinfo {
+  visibility: hidden;
+}
+
+.user__atavatar {
+  background-color: black;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.user__baseinfo {
+  margin-left: 15px;
+}
+
+.user__name {
+  color: white;
+  font-size: 25px;
+}
+
+.user__membertype {
+  color: white;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.user__setting {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  color: white;
+  font-size: 22px;
+
+  &__title {
+    font-size: 28px;
+  }
+
+  &__message {
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 28px;
+  }
+}
+
+.user__focusinfo {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  background-color: white;
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+    &:first-child {
+      border-right: 4px solid #e68d3e;
+    }
+  }
+
+  &__count {
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+
+  }
+
+  &__title {
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+  }
+}
+
+
+.user__grid {
+  margin: 18px 0;
+  background-color: white;
+
+  &__title {
+    display: flex;
+    height: 80px;
+    padding: 0 20px;
+    justify-content: space-around;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  &__title__mine {
+    font-size: 25px;
+    flex: 1;
+    text-align: left;
+    line-height: 80px;
+  }
+
+  &__title__all {
+    font-size: 20px;
+    flex: 1;
+    color: #5e6d82;
+    text-align: right;
+    line-height: 80px;
+  }
+
+  &__colums {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    .user__grid__colums__item {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+    }
+    .user__grid__colums__item__img{
+      width: 50px;
+      height: 50px;
+    }
+    .user__grid__colums__item__desc{
+      font-size:25px;
+      color: #5e6d82;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.cart__icon {
+  font-size: 150px;
+}
+
+.cart__button {
+  width: 100%;
+}
