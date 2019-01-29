@@ -4,7 +4,8 @@ export default {
   namespace: 'common',
   state: {
     access_token: Taro.getStorageSync('access_token'),
-    phone:Taro.getStorageSync("phone")
+    phone:Taro.getStorageSync("phone"),
+    code:Taro.getStorageSync("code")
   },
 
   effects: {
