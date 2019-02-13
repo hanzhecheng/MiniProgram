@@ -1,9 +1,12 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+
 .search__tag {
   margin: 10px;
 }
 
 .search__hot {
   margin-top: 10px;
+
   &__top {
     padding: 10px 10px;
     border-top: 1px solid #e1e1e1;
@@ -22,5 +25,47 @@
     color: #c42626;
     height: 30px;
     line-height: 30px;
+  }
+}
+
+.search__result {
+  margin-top: 10px;
+
+  &__condition {
+    padding: 5px 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1e1ee;
+  }
+
+  &__condition__item {
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+  }
+
+  &__goods {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  &__goods__image {
+    height: 350px;
+    width: 100%;
+  }
+
+  &__goods__name {
+    font-size: 30px;
+  }
+
+  &__goods__desc {
+    font-size: 25px;
+    word-break: break-all;
+  }
+
+  &__goods__price {
+    font-family: Arial;
+    font-size: 25px;
   }
 }

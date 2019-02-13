@@ -13,7 +13,7 @@ class SearchGrid extends Component {
                 </View>}
                 {this.props.tags.map(item => {
                     return (
-                        <AtTag className="search__tag">{item}</AtTag>
+                        <AtTag className="search__tag" name={item} onClick={this.props.onClick}>{item}</AtTag>
                     )
                 })}
             </View>
