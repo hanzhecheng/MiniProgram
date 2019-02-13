@@ -1,0 +1,26 @@
+.search__tag {
+  margin: 10px;
+}
+
+.search__hot {
+  margin-top: 10px;
+  &__top {
+    padding: 10px 10px;
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__top__title {
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  &__top__change {
+    font-size: 20px;
+    color: #c42626;
+    height: 30px;
+    line-height: 30px;
+  }
+}

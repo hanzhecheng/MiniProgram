@@ -1,10 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Input, Button, Text } from '@tarojs/components';
-// import { connect } from '@tarojs/redux';
 import './index.scss';
-// @connect(({ login }) => ({
-//     ...login
-// }))
+
 class Index extends Component {
     config = {
         navigationBarTitleText: '用户登录',

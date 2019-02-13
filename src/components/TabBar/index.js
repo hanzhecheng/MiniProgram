@@ -28,6 +28,8 @@ class TabBar extends Component {
                     { title: '购物车', iconType: 'shopping-cart' },
                     { title: '我的', iconType: 'user' }
                 ]}
+                iconSize={21}
+                fontSize={10}
                 onClick={this.handleClick}
                 current={this.props.current}
             />

@@ -14,12 +14,9 @@ class Index extends Component {
             currentTabs: 0,
             value: '',
             tabList: [
-                { title: '服装' },
-                { title: '食品' },
-                { title: '标签页3' },
-                { title: '标签页4' },
-                { title: '标签页5' },
-                { title: '标签页6' },
+                { title: '服装/鞋帽' },
+                { title: '美妆/洗护' },
+                { title: '珠宝/首饰' }
             ],
             categorys: [
                 {
@@ -50,10 +47,12 @@ class Index extends Component {
         }
     }
     componentDidMount() {
-       
+
     }
     onChange = () => {
-
+        Taro.navigateTo({
+            url: "/pages/search/index"
+        })
     }
     handleClick = (value) => {
         this.setState({
@@ -62,18 +61,20 @@ class Index extends Component {
     }
     render() {
         let atgrids = [1, 1, 1, 1, 1, 1].map((item, index) => {
-            return (<AtTabsPane tabDirection='vertical' key={index} current={this.state.currentTabs} index={0}>
-                <View className='category__atgrid'>
-                    <AtGrid mode='rect' hasBorder={false} columnNum={2} data={this.state.categorys} />
-                </View>
-            </AtTabsPane>)
+            return (
+                <AtTabsPane tabDirection='vertical' key={index} current={this.state.currentTabs} index={0}>
+                    <View className='category__atgrid'>
+                        <AtGrid mode='rect' hasBorder={false} columnNum={2} data={this.state.categorys} />
+                    </View>
+                </AtTabsPane>
+            )
         })
         return (
             <View>
-                <AtSearchBar
-                    value={this.state.value}
-                    onChange={this.onChange}
-                />
+                <View onClick={this.onChange} className="category__search">
+                    <View className='at-icon at-icon-search'>搜索</View>
+                </View>
+
                 <AtTabs
                     current={this.state.currentTabs}
                     scroll

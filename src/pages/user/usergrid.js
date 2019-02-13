@@ -13,12 +13,13 @@ class UserGrid extends Component {
                     {this.props.datas.map(item => {
                         return (
                             <View className="user__grid__colums__item">
-                                <Image src={item.image} className="user__grid__colums__item__img"></Image>
+                                <Image src={item.image} className={`${this.props.big ? 'user__grid__colums__item__img--big' : 'user__grid__colums__item__img'}`}></Image>
                                 <Label className="user__grid__colums__item__desc">{item.value}</Label>
                             </View>
                         )
                     })}
                 </View>
+
             </View>
         )
     }

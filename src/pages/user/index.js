@@ -12,8 +12,8 @@ class Index extends Component {
         super(props)
         this.state = {
             current: 3,
-            userName: '',
-            userAvatar: '',
+            userName: Taro.getStorageSync("userName"),
+            userAvatar: Taro.getStorageSync("userAvatar"),
             orderdatas: [
                 {
                     image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
@@ -52,6 +52,10 @@ class Index extends Component {
                 {
                     image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
                     value: '预存增值'
+                },
+                {
+                    image: '',
+                    value: ''
                 }
             ],
             customerdatas: [
@@ -63,11 +67,37 @@ class Index extends Component {
                     image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
                     value: '电话'
                 },
+                {
+                    image: '',
+                    value: ''
+                },
+                {
+                    image: '',
+                    value: ''
+                },
+                {
+                    image: '',
+                    value: ''
+                }
+            ],
+            likedatas: [
+                {
+                    image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
+                    value: '¥12313'
+                },
+                {
+                    image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
+                    value: '¥2500'
+                },
+                {
+                    image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
+                    value: '¥91'
+                },
             ]
         }
     }
     componentDidMount() {
-
+       
     }
 
     getUserInfo = (value) => {
@@ -76,7 +106,8 @@ class Index extends Component {
             userName: userinfo.nickName,
             userAvatar: userinfo.avatarUrl
         })
-
+        Taro.setStorageSync("userName", userinfo.nickName)
+        Taro.setStorageSync("userAvatar", userinfo.avatarUrl)
     }
 
     render() {
@@ -84,20 +115,17 @@ class Index extends Component {
             <View className="user">
                 <View className="user__atavatar">
                     <View>
-                        <AtAvatar circle image={this.state.userAvatar}></AtAvatar>
+                        <AtAvatar size="large" circle image={this.state.userAvatar}></AtAvatar>
                     </View>
                     <View className="user__baseinfo">
                         {this.state.userName && <View className="user__name">{this.state.userName}</View>}
+                        {this.state.userName && <View className="user__membertype">函百会员</View>}
                         {!this.state.userName && <Button open-type="getUserInfo" lang="zh_CN" onGetUserInfo={this.getUserInfo} className="user__login">
                             登录
                         </Button>}
-                       
-                        <View className="user__membertype">函百会员</View>
-
                     </View>
                     <View className="user__setting">
-                        <View className="user__setting__title">设置</View>
-                        <View className='at-icon at-icon-message user__setting__message'></View>
+                        <View className="user__setting__title">地址管理</View>
                     </View>
                 </View>
 
@@ -117,10 +145,9 @@ class Index extends Component {
                 <UserGrid datas={this.state.assetdatas} main="我的资产"></UserGrid>
 
                 <UserGrid datas={this.state.customerdatas} main="客服中心"></UserGrid>
-                
-                <View className="user__guesslike">
-                    <View>猜你喜欢</View>
-                </View>
+
+                <UserGrid datas={this.state.likedatas} big main="猜你喜欢"></UserGrid>
+
                 <TabBar current={this.state.current}></TabBar>
             </View>
 
