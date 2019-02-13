@@ -3,6 +3,42 @@ import { View, Input, Button } from '@tarojs/components';
 import { AtTabs, AtTabsPane, AtGrid, AtSearchBar } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import './index.scss';
+const myCategory = [{
+    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
+    value: '领取中心'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
+    value: '找折扣'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
+    value: '领会员'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
+    value: '领取中心'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
+    value: '找折扣'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
+    value: '领会员'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
+    value: '领取中心'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
+    value: '找折扣'
+},
+{
+    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
+    value: '领会员'
+}]
 class Index extends Component {
     config = {
         navigationBarTitleText: '分类'
@@ -14,40 +50,27 @@ class Index extends Component {
             currentTabs: 0,
             value: '',
             tabList: [
-                { title: '服装/鞋帽' },
-                { title: '美妆/洗护' },
-                { title: '珠宝/首饰' }
+                { title: '母婴' },
+                { title: '珠宝' },
+                { title: '箱包' },
+                { title: '洗护' },
+                { title: '美妆' },
+                { title: '服装' },
+                { title: '鞋靴' },
+                { title: '食品' }
             ],
-            categorys: [
-                {
-                    image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-                    value: '领取中心'
-                },
-                {
-                    image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
-                    value: '找折扣'
-                },
-                {
-                    image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
-                    value: '领会员'
-                },
-                {
-                    image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-                    value: '新品首发'
-                },
-                {
-                    image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-                    value: '领京豆'
-                },
-                {
-                    image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
-                    value: '手机馆'
-                }
-            ]
+            categorys: [],
+
         }
     }
     componentDidMount() {
-
+        let random = Math.floor(Math.random() * 10) + 1;
+        let arr = myCategory.filter((item, index) => {
+            return index < random
+        })
+        this.setState({
+            categorys: arr
+        })
     }
     onChange = () => {
         Taro.navigateTo({
@@ -55,16 +78,26 @@ class Index extends Component {
         })
     }
     handleClick = (value) => {
+        let random = Math.floor(Math.random() * 10) + 1;
+        let arr = myCategory.filter((item, index) => {
+            return index < random
+        })
         this.setState({
-            currentTabs: value
+            currentTabs: value,
+            categorys: arr
         })
     }
     render() {
-        let atgrids = [1, 1, 1, 1, 1, 1].map((item, index) => {
+
+        let atgrids = this.state.tabList.map((item, index) => {
             return (
-                <AtTabsPane tabDirection='vertical' key={index} current={this.state.currentTabs} index={0}>
-                    <View className='category__atgrid'>
-                        <AtGrid mode='rect' hasBorder={false} columnNum={2} data={this.state.categorys} />
+                <AtTabsPane tabDirection='vertical' key={index} current={this.state.currentTabs} index={index}>
+                    <View className='at-row at-row--wrap'>
+                        {this.state.categorys.map(items => {
+                            return (
+                                <Image className="at-col at-col-4 category__img" src={items.image}></Image>
+                            )
+                        })}
                     </View>
                 </AtTabsPane>
             )
