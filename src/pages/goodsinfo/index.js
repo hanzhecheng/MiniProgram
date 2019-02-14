@@ -30,24 +30,6 @@ class Index extends Component {
                 duration: 2000
             })
         })
-        Taro.getSetting({
-            success(res) {
-                if (!res.authSetting['scope.userLocation']) {
-                    Taro.authorize({
-                        scope: 'scope.userLocation',
-                        success() {
-                            Taro.getLocation({
-                                type: 'wgs84',
-                                success(res) {
-                                    console.log(JSON.stringify(res))
-                                }
-                            })
-                        }
-                    })
-                }
-            }
-        })
-
     }
     previewImage = (index) => {
         Taro.previewImage({

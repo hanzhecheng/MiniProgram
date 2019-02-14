@@ -14,9 +14,9 @@ class SearchResult extends Component {
                     <View className="search__result__condition__item">仅看有货</View>
                 </View>
                 <View className="at-row at-row--wrap">
-                    {this.props.goods.map(item => {
+                    {this.props.goods.map((item,index) => {
                         return (
-                            <View className="at-col at-col-6 search__result__goods" onClick={this.props.onRedirect}>
+                            <View key={index} className="at-col at-col-6 search__result__goods" onClick={this.props.onRedirect}>
 
                                 <Image className="search__result__goods__image" src={item.image}></Image>
                                 <View className="search__result__goods__name">{item.name}</View>

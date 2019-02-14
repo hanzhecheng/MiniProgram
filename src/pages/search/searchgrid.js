@@ -11,9 +11,9 @@ class SearchGrid extends Component {
                     {this.props.hot && <View className="search__hot__top__change" onClick={this.props.onChangeHot}>换一批</View>}
                     {this.props.his && <View className="search__hot__top__change" onClick={this.props.onClearHistory}>清除</View>}
                 </View>}
-                {this.props.tags.map(item => {
+                {this.props.tags.map((item,index) => {
                     return (
-                        <AtTag className="search__tag" name={item} onClick={this.props.onClick}>{item}</AtTag>
+                        <AtTag key={index} className="search__tag" name={item} onClick={this.props.onClick}>{item}</AtTag>
                     )
                 })}
             </View>

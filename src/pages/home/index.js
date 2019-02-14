@@ -77,9 +77,9 @@ class Index extends Component {
                         <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1546928213926.svg"></Image>
                     </View>
                     <View className='at-row  at-row--wrap'>
-                        {this.state.recommond.map(item => {
+                        {this.state.recommond.map((item,index) => {
                             return (
-                                <View className='at-col at-col-6 home__recommend'>
+                                <View className='at-col at-col-6 home__recommend' key={index}>
                                     <Image className="home__img" src={item.image}></Image>
                                 </View>
                             )
