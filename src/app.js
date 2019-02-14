@@ -10,18 +10,19 @@ import 'taro-ui/dist/style/index.scss' //taro-ui组件的样式
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5') {
 //   require('nerv-devtools')
 // }
-
+//
 class App extends Component {
 
   config = {
     pages: [
-      'pages/login/index',
       'pages/home/index',
+      'pages/login/index',
       'pages/user/index',
       'pages/category/index',
       'pages/cart/index',
       'pages/search/index',
-      'pages/goodsinfo/index'
+      'pages/goodsinfo/index',
+      'pages/shippingaddress/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -80,7 +81,7 @@ class App extends Component {
   // 请勿修改此函数
   render() {
     return (
-      <Login />
+      <Home />
     )
   }
 }
