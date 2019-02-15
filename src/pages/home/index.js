@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, SwiperItem, Image } from '@tarojs/components';
+import { View, ScrollView, Image } from '@tarojs/components';
 import { AtTabs, AtTabsPane } from 'taro-ui'
 import './index.scss';
 import TabBar from '../../components/TabBar/index'

@@ -95,8 +95,6 @@ class Index extends Component {
                 },
             ],
             type2url: {
-                'address': '/pages/shippingaddress/index',
-                'allorder': '/pages/shippingaddress/index'
             }
         }
     }
@@ -105,9 +103,7 @@ class Index extends Component {
     }
 
     redirectToUrl = (type) => {
-        Taro.navigateTo({
-            url: this.state.type2url[type]
-        })
+      
     }
 
     getUserInfo = (value) => {
@@ -135,7 +131,7 @@ class Index extends Component {
                         </Button>}
                     </View>
                     <View className="user__setting">
-                        <View className="user__setting__title" onClick={this.redirectToUrl.bind(this, 'address')}>地址管理</View>
+                        <View className="user__setting__title">地址管理</View>
                     </View>
                 </View>
 
@@ -150,7 +146,7 @@ class Index extends Component {
                     </View>
                 </View>
 
-                <UserGrid datas={this.state.orderdatas} main="我的订单" all="查看全部订单" toAllOrder={this.type2url('allorder')}></UserGrid>
+                <UserGrid datas={this.state.orderdatas} main="我的订单" all="查看全部订单" toAllOrder={this.redirectToUrl('allorder')}></UserGrid>
 
                 <UserGrid datas={this.state.assetdatas} main="我的资产"></UserGrid>
 

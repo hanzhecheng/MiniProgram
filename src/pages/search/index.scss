@@ -5,7 +5,7 @@
 }
 
 .search__hot {
-  margin-top: 10px;
+  margin-top: 80px;
 
   &__top {
     padding: 10px 10px;
@@ -37,12 +37,17 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #e1e1ee;
+    margin-top: 70px;
   }
 
   &__condition__item {
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     font-size: 30px;
+  }
+
+  &__condition__item--selected {
+    color: #c06f13;
   }
 
   &__goods {
@@ -61,11 +66,24 @@
 
   &__goods__desc {
     font-size: 25px;
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
     word-break: break-all;
+    text-overflow: ellipsis;
   }
 
   &__goods__price {
     font-family: Arial;
     font-size: 25px;
+  }
+
+  &__scrollview {
+    height: 80vh;
+  }
+
+  &__scrollview--uncondition {
+    margin-top: 60px;
+    height: 80vh;
   }
 }

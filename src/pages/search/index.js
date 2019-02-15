@@ -1,12 +1,15 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { AtSearchBar, AtTag } from 'taro-ui'
+import { View, ScrollView } from '@tarojs/components';
+import { AtSearchBar } from 'taro-ui'
 import SearchGrid from './searchgrid'
 import SearchResult from './searchResult'
+import SearchCondition from './searchCondition'
 import './index.scss';
 class Index extends Component {
     config = {
-        navigationBarTitleText: '搜索'
+        navigationBarTitleText: '搜索',
+        enablePullDownRefresh: true,
+        backgroundTextStyle: 'dark'
     }
     constructor(props) {
         super(props)
@@ -77,10 +80,24 @@ class Index extends Component {
         this.setState({ searchTags })
         Taro.setStorageSync("searchTags", this.state.searchTags)
     }
+    onPullDownRefresh() {
+        setTimeout(function () {
+            Taro.stopPullDownRefresh()
+        }, 3000)
+    }
+    onReachBottom(){
+        Taro.showToast({
+            title:'成功',
+            icon:'success',
+            duration:1500
+        })
+    }
+
     render() {
         return (
             <View>
                 <AtSearchBar
+                    fixed
                     focus
                     value={this.state.value}
                     onChange={this.onChange}
@@ -88,23 +105,33 @@ class Index extends Component {
                     onActionClick={this.onActionClick}
                     onConfirm={this.onActionClick}
                 />
-                {this.state.showSearchResult && <View>
-                    <SearchResult goods={this.state.goodsList} onRedirect={this.toGoosInfo}></SearchResult>
-                </View>}
-                {!this.state.showSearchResult && <View>
-                    <SearchGrid title="搜索历史" his
-                        tags={this.state.searchTags}
-                        onClearHistory={this.clearHistory}
-                        onClick={this.onClickTag}
-                    >
-                    </SearchGrid>
-                    <SearchGrid title="热门搜索" hot
-                        tags={this.state.hotTags}
-                        onChangeHot={this.changeHot}
-                        onClick={this.onClickTag}
-                    >
-                    </SearchGrid>
-                </View>}
+                {this.state.showSearchResult && <SearchCondition></SearchCondition>}
+                <ScrollView
+                    className={`search__result__scrollview ${this.state.showSearchResult?'search__result__scrollview--uncondition':''}`}
+                    scrollY
+                    scrollWithAnimation
+                    scrollTop='0'
+                    enableBackToTop
+                >
+                    {this.state.showSearchResult && <View>
+                        <SearchResult goods={this.state.goodsList} onRedirect={this.toGoosInfo}></SearchResult>
+                    </View>}
+                    {!this.state.showSearchResult && <View>
+                        <SearchGrid title="搜索历史" his
+                            tags={this.state.searchTags}
+                            onClearHistory={this.clearHistory}
+                            onClick={this.onClickTag}
+                        >
+                        </SearchGrid>
+                        <SearchGrid title="热门搜索" hot
+                            tags={this.state.hotTags}
+                            onChangeHot={this.changeHot}
+                            onClick={this.onClickTag}
+                        >
+                        </SearchGrid>
+                    </View>}
+                </ScrollView>
+
 
             </View>
         )
