@@ -21,8 +21,7 @@ class App extends Component {
       'pages/category/index',
       'pages/cart/index',
       'pages/search/index',
-      'pages/goodsinfo/index',
-      'pages/shippingaddress/index'
+      'pages/goodsinfo/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -35,38 +34,7 @@ class App extends Component {
         "desc": "您的位置将用于收货地址筛选"
       }
     }
-    // tabBar: {
-    //   color: '#626567',
-    //   selectedColor: '#2A8CE5',
-    //   backgroundColor: '#FBFBFB',
-    //   borderStyle: 'white',
-    //   list: [
-    //     {
-    //       pagePath: 'pages/home/index',
-    //       text: '首页',
-    //       iconPath: './asset/images/index.png',
-    //       selectedIconPath: './asset/images/index_focus.png'
-    //     },
-    //     {
-    //       pagePath: 'pages/category/index',
-    //       text: '分类',
-    //       iconPath: './asset/images/discovery.png',
-    //       selectedIconPath: './asset/images/discovery_focus.png'
-    //     },
-    //     {
-    //       pagePath: 'pages/cart/index',
-    //       text: '购物车',
-    //       iconPath: './asset/images/discovery.png',
-    //       selectedIconPath: './asset/images/discovery_focus.png'
-    //     },
-    //     {
-    //       pagePath: 'pages/user/index',
-    //       text: '我的',
-    //       iconPath: './asset/images/burger.png',
-    //       selectedIconPath: './asset/images/burger_focus.png'
-    //     }
-    //   ]
-    // }
+    
   }
 
   componentDidMount() { }
