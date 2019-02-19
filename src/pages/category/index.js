@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Input, Button } from '@tarojs/components';
-import { AtTabs, AtTabsPane, AtGrid, AtSearchBar } from 'taro-ui'
+import { View } from '@tarojs/components';
+import { AtTabs, AtTabsPane } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import './index.scss';
 const myCategory = [{

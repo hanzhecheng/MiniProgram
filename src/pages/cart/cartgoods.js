@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Image, Checkbox } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import { AtSwipeAction, AtInputNumber } from 'taro-ui'
 import HBCheckbox from '../../components/Checkbox/index'
 import './index.scss';

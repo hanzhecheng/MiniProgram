@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Radio, ScrollView, Button } from '@tarojs/components';
+import { View, ScrollView, Button } from '@tarojs/components';
 import { AtButton } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import CartGoods from './cartgoods'
