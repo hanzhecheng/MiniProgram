@@ -14,6 +14,7 @@ class Index extends Component {
         this.state = {
             current: 2,
             allChecked: false,
+            calcBtnDisabled: true,
             totalAmount: 0,
             goodsList: [
                 {
@@ -187,15 +188,22 @@ class Index extends Component {
 
     calcTotalAmount() {
         let goodsList = this.state.goodsList
-        let totalAmount = 0
+        let totalAmount = 0, calcBtnDisabled = false;
         goodsList.forEach(item => {
             item.list.forEach(items => {
                 totalAmount += (items.checked ? items.price * items.num : 0)
             })
         })
-        this.setState({ totalAmount })
+        calcBtnDisabled = totalAmount === 0
+        this.setState({ totalAmount, calcBtnDisabled })
     }
-
+    onSettle = () => {
+        Taro.scanCode({
+            success(res) {
+                console.log(res)
+            }
+        })
+    }
     render() {
         return (
 
@@ -252,7 +260,7 @@ class Index extends Component {
                             共计:{this.state.totalAmount}
                         </View>
                         <View className='at-col at-col-3'>
-                            <Button className="cart__calc__button">结算</Button>
+                            <Button className="cart__calc__button" disabled={this.state.calcBtnDisabled} onClick={this.onSettle}>结算</Button>
                         </View>
                     </View>
                 </View>
