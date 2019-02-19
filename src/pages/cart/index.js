@@ -198,10 +198,8 @@ class Index extends Component {
         this.setState({ totalAmount, calcBtnDisabled })
     }
     onSettle = () => {
-        Taro.scanCode({
-            success(res) {
-                console.log(res)
-            }
+        Taro.navigateTo({
+            url: "/pages/confirmorder/index"
         })
     }
     render() {
