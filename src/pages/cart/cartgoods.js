@@ -1,11 +1,15 @@
 import Taro from '@tarojs/taro';
-import { View, Radio, Image } from '@tarojs/components';
+import { View, Image, Checkbox } from '@tarojs/components';
 import { AtSwipeAction, AtInputNumber } from 'taro-ui'
+import HBCheckbox from '../../components/Checkbox/index'
 import './index.scss';
 
 export default class CartGoods extends Taro.Component {
-    onHandleChange(index, value) {
+    onHandleChange=(index, value)=> {
         this.props.onChangeNum(this.props.goodsIndex, index, value)
+    }
+    updateChecked=(index,checked)=>{
+        this.props.onChangeChecked(this.props.goodsIndex,index,checked)
     }
     render() {
         return (
@@ -27,7 +31,7 @@ export default class CartGoods extends Taro.Component {
                             ]}>
                             <View className='at-row at-row--wrap'>
                                 <View className='at-col at-col-1 cart--center'>
-                                    <Radio className="cart__radio"></Radio>
+                                    <HBCheckbox className="cart__radio" checked={item.checked} onChange={this.updateChecked.bind(this,index)}></HBCheckbox>
                                 </View>
                                 <View className='at-col at-col-3'>
                                     <Image className="cart__goods__img" src={item.image} />

@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #D8D8D8;
 }
 
 .cart--center {
@@ -23,17 +22,18 @@
 
 .cart__detail {
   width: 100%;
-  background-color: white;
+  background-color: #F5F5F5;
 }
 
 .cart__shop {
   margin-bottom: 10px;
   padding: 10px;
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid #F5F5F5;
 }
 
-.cart__radio {
-  transform: scale(0.8);
+.cart__padding {
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .cart__goods .at-row .at-col {
@@ -52,6 +52,7 @@
 
 .cart__info {
   margin-bottom: 15px;
+  background-color: white;
 }
 
 .cart__calc {
