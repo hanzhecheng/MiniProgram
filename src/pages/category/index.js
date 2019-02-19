@@ -77,6 +77,11 @@ class Index extends Component {
             url: "/pages/search/index"
         })
     }
+    onRedirectToDetail=()=>{
+        Taro.navigateTo({
+            url: "/pages/goodsinfo/index"
+        })
+    }
     handleClick = (value) => {
         let random = Math.floor(Math.random() * 10) + 1;
         let arr = myCategory.filter((item, index) => {
@@ -95,7 +100,7 @@ class Index extends Component {
                     <View className='at-row at-row--wrap'>
                         {this.state.categorys.map(items => {
                             return (
-                                <Image className="at-col at-col-4 category__img" src={items.image}></Image>
+                                <Image className="at-col at-col-4 category__img" src={items.image} onClick={this.onRedirectToDetail}></Image>
                             )
                         })}
                     </View>
