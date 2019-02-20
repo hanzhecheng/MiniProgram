@@ -1,0 +1,48 @@
+.addaddress {
+  background-color: #F5F5F5;
+
+  .at-input__input,
+  .at-input__title {
+    font-size: 25px;
+  }
+}
+
+.addaddress__form {
+  background-color: white;
+
+}
+
+.addaddress__tag {
+  margin: 10px;
+}
+
+.addaddress__picker {
+  padding: 24px 0;
+  font-size: 25px;
+  margin-left: 32px;
+  color: #333;
+  border-bottom: 1px solid #d6e4ef;
+}
+
+.addaddress__border--top {
+  border-top: 1px solid #d6e4ef;
+}
+
+.addaddress__picker__label {
+  margin-right: 16px;
+  width: 172px;
+  display: inline-block;
+}
+
+.addaddress__confirm {
+  padding: 10px 20px;
+}
+
+.addaddress__btn {
+  height: 80px;
+  line-height: 80px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(207, 33, 33);
+  color: white;
+}
