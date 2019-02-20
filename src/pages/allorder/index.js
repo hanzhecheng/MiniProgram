@@ -521,6 +521,9 @@ export default class Index extends Taro.Component {
             ]
         }
     }
+    config = {
+        navigationBarTitleText: '全部订单'
+    }
     render() {
         return (
             <View className="allorder">
