@@ -226,6 +226,7 @@ class Index extends Component {
                                     <View key={index} className="cart__info">
                                         <View className="cart__shop">
                                             <HBCheckbox
+                                                size="small"
                                                 checked={item.checked}
                                                 onChange={this.onCheckAllChange.bind(this, index)}
                                                 label={item.shopname}>
@@ -250,6 +251,7 @@ class Index extends Component {
                         <View className='at-col at-col-3 cart__padding'>
                             <HBCheckbox
                                 label="全选"
+                                size="small"
                                 checked={allChecked}
                                 onChange={this.onCheckAll}
                             >全选</HBCheckbox>

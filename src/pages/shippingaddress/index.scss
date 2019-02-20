@@ -1,0 +1,56 @@
+@mixin fonts($size, $color:black, $align:left) {
+  font-size: $size;
+  color: $color;
+  text-align: $align;
+}
+
+.shipping {
+  background-color: #F5F5F5;
+  padding: 15px 0 0 0;
+
+  .at-row {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+  }
+}
+
+.shipping__list {
+  height: calc(100vh - 100px);
+}
+
+.shipping__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipping__name__phone {
+  @include fonts(25px);
+}
+
+.shipping__address {
+  @include fonts(25px, #A9A9A9);
+  white-space: pre-wrap;
+}
+
+.shipping__default {
+  @include fonts(22px, rgb(211, 58, 58), center);
+}
+
+.shipping__edit {
+  @include fonts(22px, rgb(211, 58, 58), center);
+}
+
+.shipping__addnew {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  line-height: 80px;
+  background-color: white;
+  border-top: 2px solid #e1e1e1;
+  @include fonts(35px, rgb(211, 58, 58), center);
+}

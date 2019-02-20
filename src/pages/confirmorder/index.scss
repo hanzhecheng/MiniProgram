@@ -11,6 +11,13 @@
   padding: 15px;
   box-sizing: border-box;
   background-color: white;
+  position: relative;
+}
+
+.confirmorder__address__icon {
+  position: absolute;
+  right: 10px;
+  top: 45%;
 }
 
 .confirmorder__address__title {

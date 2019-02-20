@@ -1,53 +1,93 @@
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
-//import QQMapWX from '../../utils/qqmap-wx-jssdk.min.js';
-//let qqmapsdk;
 export default class Index extends Taro.Component {
     constructor(props) {
         super(props)
         this.state = {
-            address: ''
+            addresslist: [
+                {
+                    name: '韩喆成',
+                    phone: '156****1281',
+                    address: '河南省/濮阳市/华龙区/阔巷22号 美罗全球精品购',
+                    isDefault: true
+                },
+                {
+                    name: '吴靖',
+                    phone: '138****4382',
+                    address: '江苏省/淮安市/洪泽市/阔巷22号 美罗全球精品购',
+                    isDefault: false
+                },
+                {
+                    name: '王凯',
+                    phone: '180****7359',
+                    address: '江苏省/苏州市/姑苏区/阔巷22号 美罗全球精品购',
+                    isDefault: false
+                },
+                {
+                    name: '鲁人',
+                    phone: '156****7568',
+                    address: '天津市/和平区/南市街道/阔巷22号 美罗全球精品购',
+                    isDefault: false
+                },
+
+            ]
         }
     }
-    componentDidMount() {
-        // qqmapsdk = new QQMapWX({
-        //     key: 'UWNBZ-OGBCW-I3WRI-O4YUB-BQL55-FZFYR'
-        // });
-        // //获取用户位置信息
-        // Taro.getSetting().then(res => {
-        //     if (!res.authSetting['scope.userLocation']) {
-        //         Taro.authorize({
-        //             scope: 'scope.userLocation'
-        //         }).then(_ => {
-        //             this.getUserLocation()
-        //         })
-        //     } else {
-        //         this.getUserLocation()
-        //     }
-        // })
+    config = {
+        navigationBarTitleText: '收货地址'
     }
-    getUserLocation() {
+    componentDidMount() {
 
-        // Taro.getLocation({
-        //     type: 'wgs84'
-        // }).then(res => {
-        //     qqmapsdk.reverseGeocoder({
-        //         location: {
-        //             latitude: res.latitude,
-        //             longitude: res.longitude
-        //         },
-        //         success: function (addressRes) {
-        //             this.setState({
-        //                 address: JSON.stringify(addressRes)
-        //             })
-        //         }
-        //     })
-        // })
+    }
+    addAddress = () => {
+        Taro.setStorageSync("addressinfo", '')
+        Taro.navigateTo({
+            url: "/pages/addaddress/index"
+        })
+    }
+    editAddress = (index) => {
+        Taro.setStorageSync("addressinfo", this.state.addresslist[index])
+        Taro.navigateTo({
+            url: "/pages/addaddress/index"
+        })
     }
     render() {
+        let { addresslist } = this.state
         return (
             <View className="shipping">
-               
+                <ScrollView
+                    className="shipping__list"
+                    scrollY
+                    scrollWithAnimation
+                    scrollTop='0'
+                    lowerThreshold='20'
+                    upperThreshold='20'>
+
+                    {addresslist.map((item, index) => {
+                        return (
+                            <View className="at-row at-row--wrap" key={index}>
+                                <View className='at-col at-col-8'>
+                                    <View>
+                                        <Text className="shipping__name__phone">{item.name}</Text>
+                                        <Text className="shipping__name__phone">{item.phone}</Text>
+                                    </View>
+                                    <View className="shipping__address">
+                                        {item.address}
+                                    </View>
+                                </View>
+                                <View className='at-col at-col-2 shipping__center'>
+                                    <Text className="shipping__default">{item.isDefault ? '默认地址' : ''}</Text>
+                                </View>
+                                <View className='at-col at-col-2 shipping__center' onClick={this.editAddress.bind(this, index)}>
+                                    <Text className="shipping__edit">编辑</Text>
+                                </View>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
+                <View className="shipping__addnew" onClick={this.addAddress}>
+                    新增收货地址
+                </View>
             </View>
         );
     }

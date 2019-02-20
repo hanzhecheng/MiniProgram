@@ -22,7 +22,9 @@ class App extends Component {
       'pages/cart/index',
       'pages/search/index',
       'pages/goodsinfo/index',
-      'pages/confirmorder/index'
+      'pages/confirmorder/index',
+      'pages/shippingaddress/index',
+      'pages/addaddress/index'
     ],
     window: {
       backgroundTextStyle: 'light',
