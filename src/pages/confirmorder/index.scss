@@ -35,6 +35,7 @@
   font-size: 25px;
   color: #A9A9A9;
 }
+
 .confirmorder__amount {
   height: 100px;
   line-height: 100px;
@@ -61,4 +62,17 @@
   line-height: 100px;
   background-color: rgb(214, 147, 23);
   color: white;
+}
+
+.confirmorder__money {
+  margin: 10px;
+  padding: 15px;
+  padding-bottom: 110px;
+  background-color: white;
+}
+
+.confirmorder__money__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
 }

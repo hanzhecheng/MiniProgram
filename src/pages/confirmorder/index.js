@@ -7,6 +7,18 @@ export default class Index extends Taro.Component {
         super(props)
         this.state = {
             amount: 0,
+            moneys: [
+                { name: '商品金额', money: 20032 },
+                { name: '运费合计', money: 0 },
+                { name: '换购优惠', money: 0 },
+                { name: '店铺VIP折扣', money: 0 },
+                { name: '代金券优惠', money: 0 },
+                { name: '优惠券', money: 0 },
+                { name: '赠送券', money: 0 },
+                { name: '本金券', money: 0 },
+                { name: '满减优惠', money: 0 },
+                { name: '应付总额', money: 20032 },
+            ],
             goodsList: [
                 {
                     shopname: "MATRO GBJ 珠宝旗舰店",
@@ -114,6 +126,14 @@ export default class Index extends Taro.Component {
     config = {
         navigationBarTitleText: '确认订单'
     }
+    componentDidMount() {
+        let { moneys } = this.state
+        let amount = moneys.reduce((origin, item) => {
+            origin += item.money
+            return origin
+        }, 0)
+        this.setState({ amount })
+    }
     onConfirm = () => {
 
     }
@@ -136,14 +156,23 @@ export default class Index extends Taro.Component {
                 </View>
                 {this.state.goodsList.map((item, index) => {
                     return (
-                        <GoodsInfo data={item} key={index}></GoodsInfo>
+                        <GoodsInfo showRemark={true} data={item} key={index}></GoodsInfo>
                     )
                 })}
-
+                <View className="confirmorder__money">
+                    {this.state.moneys.map((item, index) => {
+                        return (
+                            <View className="confirmorder__money__item" key={index}>
+                                <Text>{item.name}</Text>
+                                <Text>¥{item.money.toFixed(2)}</Text>
+                            </View>
+                        )
+                    })}
+                </View>
                 <View className="confirmorder__amount">
                     <View className='at-row at-row--wrap'>
                         <View className='at-col at-col-2 confirmorder__amount__title'>应付金额:</View>
-                        <View className='at-col at-col-7 confirmorder__amount__real'>{this.state.amount}</View>
+                        <View className='at-col at-col-7 confirmorder__amount__real'>¥{this.state.amount}</View>
                         <View className='at-col at-col-3 '>
                             <Button className="confirmorder__amount__btn" onClick={this.onConfirm}>确认订单</Button>
                         </View>
