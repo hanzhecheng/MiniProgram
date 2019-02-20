@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
-import GoodsInfo from './goodsinfo'
+import GoodsInfo from '../../components/GoodsList/index'
 import './index.scss'
 export default class Index extends Taro.Component {
     constructor(props) {
