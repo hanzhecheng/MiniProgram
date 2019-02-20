@@ -5,11 +5,11 @@ import HBCheckbox from '../../components/Checkbox/index'
 import './index.scss';
 
 export default class CartGoods extends Taro.Component {
-    onHandleChange=(index, value)=> {
+    onHandleChange = (index, value) => {
         this.props.onChangeNum(this.props.goodsIndex, index, value)
     }
-    updateChecked=(index,checked)=>{
-        this.props.onChangeChecked(this.props.goodsIndex,index,checked)
+    updateChecked = (index, checked) => {
+        this.props.onChangeChecked(this.props.goodsIndex, index, checked)
     }
     render() {
         return (
@@ -31,7 +31,7 @@ export default class CartGoods extends Taro.Component {
                             ]}>
                             <View className='at-row at-row--wrap'>
                                 <View className='at-col at-col-1 cart--center'>
-                                    <HBCheckbox className="cart__radio" checked={item.checked} onChange={this.updateChecked.bind(this,index)}></HBCheckbox>
+                                    <HBCheckbox size="small" checked={item.checked} onChange={this.updateChecked.bind(this, index)}></HBCheckbox>
                                 </View>
                                 <View className='at-col at-col-3'>
                                     <Image className="cart__goods__img" src={item.image} />
@@ -56,8 +56,10 @@ export default class CartGoods extends Taro.Component {
                     )
                 })}
             </View>
-
-
         )
     }
+}
+CartGoods.defaultProps = {
+    items: [],
+    goodsIndex: 0
 }

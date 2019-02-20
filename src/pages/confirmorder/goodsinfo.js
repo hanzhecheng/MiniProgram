@@ -29,3 +29,9 @@ export default class GoodsInfo extends Taro.Component {
         );
     }
 }
+GoodsInfo.defaultProps = {
+    data: {
+        shopname: '',
+        list: []
+    }
+}
