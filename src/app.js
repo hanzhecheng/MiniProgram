@@ -1,4 +1,6 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro, {
+  Component
+} from '@tarojs/taro'
 import '@tarojs/async-await'
 import Login from './pages/login'
 import Home from './pages/home'
@@ -24,7 +26,9 @@ class App extends Component {
       'pages/goodsinfo/index',
       'pages/confirmorder/index',
       'pages/shippingaddress/index',
-      'pages/addaddress/index'
+      'pages/addaddress/index',
+      'pages/viewhistory/index',
+      'pages/allorder/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -37,24 +41,24 @@ class App extends Component {
         "desc": "您的位置将用于收货地址筛选"
       }
     }
-    
+
   }
 
-  componentDidMount() { }
+  componentDidMount() {}
 
-  componentDidShow() { }
+  componentDidShow() {}
 
-  componentDidHide() { }
+  componentDidHide() {}
 
-  componentDidCatchError() { }
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render() {
-    return (
-      <Home />
+    return ( <
+      Home / >
     )
   }
 }
 
-Taro.render(< App />, document.getElementById('app'))
+Taro.render( < App / > , document.getElementById('app'))

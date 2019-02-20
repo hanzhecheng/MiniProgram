@@ -7,7 +7,7 @@ class UserGrid extends Component {
             <View className="user__grid">
                 <View className="user__grid__title">
                     <View className="user__grid__title__mine">{this.props.main}</View>
-                    {this.props.all && <View className="user__grid__title__all" onClick={this.props.toAllOrder}>{this.props.all}<View className='at-icon at-icon-chevron-right'></View></View>}
+                    {this.props.all && <View className="user__grid__title__all" onClick={this.props.onAllOrder}>{this.props.all}<View className='at-icon at-icon-chevron-right'></View></View>}
                 </View>
                 <View className="user__grid__colums">
                     {this.props.datas.map((item,index) => {
