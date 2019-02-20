@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Image } from '@tarojs/components';
+import { View, Image, Textarea } from '@tarojs/components';
 import './index.scss'
 export default class GoodsInfo extends Taro.Component {
     render() {
@@ -24,7 +24,15 @@ export default class GoodsInfo extends Taro.Component {
                         </View>
                     )
                 })}
+                {this.props.showRemark && <View className="hb__goods__remark">
+                    <View className="hb__goods__label">
+                        备注信息
+                    </View>
+                    <View>
+                        <Textarea className="hb__goods__textarea" placeholder="限45个字,提示:请勿填写有关支付、收货、发票方面的信息" maxlength={45}></Textarea>
+                    </View>
 
+                </View>}
             </View>
         );
     }
@@ -34,5 +42,6 @@ GoodsInfo.defaultProps = {
         shopname: '',
         list: []
     },
-    type: ''
+    type: '',
+    showRemark: false
 }
