@@ -9,6 +9,14 @@
   align-items: center;
 }
 
+.hb__checkbox__area--big {
+  transform: scale(1.2);
+}
+
+.hb__checkbox__area--small {
+  transform: scale(.8);
+}
+
 .hb__checkbox {
   @include hb__checkbox;
   border-radius: 50%;
