@@ -1,0 +1,18 @@
+.hb__border__top {
+  width: 3vw;
+  margin: 10px 1vw 10px 0;
+  transform: skew(160deg);
+}
+
+.hb__border__area {
+  display: flex;
+  background-color: white;
+
+  .hb__border__top:nth-child(odd) {
+    border: 5px solid #e27272;
+  }
+
+  .hb__border__top:nth-child(even) {
+    border: 5px solid #598bc4;
+  }
+}

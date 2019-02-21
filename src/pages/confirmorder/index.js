@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import GoodsInfo from '../../components/GoodsList/index'
 import Border from '../../components/Boder/index'
-import {parseMoney} from '../../utils/utils'
+import { parseMoney } from '../../utils/utils'
 import './index.scss'
 export default class Index extends Taro.Component {
     constructor(props) {
@@ -147,15 +147,18 @@ export default class Index extends Taro.Component {
     render() {
         return (
             <View className="confirmorder">
-                <View className="confirmorder__address" onClick={this.toAddress}>
-                    <Text className="confirmorder__address__title">收货信息</Text>
-                    <View className='at-row at-row--wrap'>
-                        <View className='at-col at-col-4 confirmorder__address__name'>韩喆成</View>
-                        <View className='at-col at-col-8 confirmorder__address__phone'>156****1281</View>
-                        <View className='at-col at-col-12 confirmorder__address__detail'>江苏/苏州市/姑苏区/阔巷22号</View>
+                <Border>
+                    <View className="confirmorder__address" onClick={this.toAddress}>
+                        <Text className="confirmorder__address__title">收货信息</Text>
+                        <View className='at-row at-row--wrap'>
+                            <View className='at-col at-col-4 confirmorder__address__name'>韩喆成</View>
+                            <View className='at-col at-col-8 confirmorder__address__phone'>156****1281</View>
+                            <View className='at-col at-col-12 confirmorder__address__detail'>江苏/苏州市/姑苏区/阔巷22号</View>
+                        </View>
+                        <View className='at-icon at-icon-chevron-right confirmorder__address__icon'></View>
                     </View>
-                    <View className='at-icon at-icon-chevron-right confirmorder__address__icon'></View>
-                </View>
+                </Border>
+
                 {this.state.goodsList.map((item, index) => {
                     return (
                         <GoodsInfo showRemark={true} data={item} key={index}></GoodsInfo>
