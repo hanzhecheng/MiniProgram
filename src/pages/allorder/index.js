@@ -2,7 +2,6 @@ import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import OrderList from '../../components/OrderList/index'
 import './index.scss'
-
 export default class Index extends Taro.Component {
     constructor(props) {
         super(props)
@@ -10,7 +9,7 @@ export default class Index extends Taro.Component {
             goodsList: [
                 {
                     shopname: "MATRO GBJ 珠宝旗舰店",
-                    statusname: '已取消',
+                    statusname: '待付款',
                     list: [
                         {
                             image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
@@ -61,7 +60,313 @@ export default class Index extends Taro.Component {
                 },
                 {
                     shopname: "食甲天下",
-                    statusname: '代发货',
+                    statusname: '待发货',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "MATRO GBJ 珠宝旗舰店",
+                    statusname: '待付款',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "食甲天下",
+                    statusname: '待发货',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "MATRO GBJ 珠宝旗舰店",
+                    statusname: '待发货',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "食甲天下",
+                    statusname: '待收货',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
+                            name: '夹心饼',
+                            unit: '瓶',
+                            desc: '高级夹心饼，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "MATRO GBJ 珠宝旗舰店",
+                    statusname: '待评价',
+                    list: [
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        },
+                        {
+                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
+                            name: '奶粉',
+                            unit: '瓶',
+                            desc: '高级奶粉，品质好，价格低',
+                            price: '12000',
+                            isOpened: false,
+                            num: 1
+                        }
+                    ]
+                },
+                {
+                    shopname: "食甲天下",
+                    statusname: '待收货',
                     list: [
                         {
                             image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
@@ -163,313 +468,7 @@ export default class Index extends Taro.Component {
                 },
                 {
                     shopname: "食甲天下",
-                    statusname: '代发货',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "MATRO GBJ 珠宝旗舰店",
-                    statusname: '已取消',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "食甲天下",
-                    statusname: '代发货',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "MATRO GBJ 珠宝旗舰店",
-                    statusname: '已取消',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "食甲天下",
-                    statusname: '代发货',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
-                            name: '夹心饼',
-                            unit: '瓶',
-                            desc: '高级夹心饼，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "MATRO GBJ 珠宝旗舰店",
-                    statusname: '已取消',
-                    list: [
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        },
-                        {
-                            image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                            name: '奶粉',
-                            unit: '瓶',
-                            desc: '高级奶粉，品质好，价格低',
-                            price: '12000',
-                            isOpened: false,
-                            num: 1
-                        }
-                    ]
-                },
-                {
-                    shopname: "食甲天下",
-                    statusname: '代发货',
+                    statusname: '待发货',
                     list: [
                         {
                             image: 'http://img.hbunion.com/upload/image/201901/1546934715988.jpg?x-image-process=image/resize,w_220',
@@ -523,6 +522,16 @@ export default class Index extends Taro.Component {
     }
     config = {
         navigationBarTitleText: '全部订单'
+    }
+    componentWillMount() {
+        let { goodsList } = this.state
+        let orderStatus = Taro.getStorageSync("orderstatus")
+        console.log(orderStatus)
+        if (orderStatus) {
+            goodsList = goodsList.filter(item => item.statusname == orderStatus)
+            this.setState({ goodsList })
+        }
+       
     }
     render() {
         return (
