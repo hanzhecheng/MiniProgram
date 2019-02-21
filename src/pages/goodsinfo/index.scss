@@ -53,7 +53,7 @@
   }
 
   &__spac--last {
-    padding-bottom: 110px;
+    padding-bottom: 150px;
   }
 
   &__spec__info {
@@ -118,4 +118,12 @@
     background-color: #c52020;
     color: white;
   }
+}
+
+.goodsinfo__operator--badge {
+  margin-top: -5px;
+  margin-right: -10px;
+}
+.goodsinfo__introduction{
+  width: 100%;
 }

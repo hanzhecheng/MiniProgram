@@ -26,7 +26,14 @@ class Index extends Component {
                 { name: '店铺', icon: 'at-icon-settings' },
                 { name: '关注', icon: 'at-icon-heart' }
             ],
-            cartCount: 0
+            cartCount: 0,
+            introductionImgage: [
+                'http://img30.360buyimg.com/popWaterMark/jfs/t1/9483/36/4450/442964/5bdaafd8E9ca94c84/c6b59a0865f38bda.jpg',
+                'http://img30.360buyimg.com/popWaterMark/jfs/t1/6306/14/4814/94299/5bdaafd8Ed7af866c/2b9dd3361d3c3b86.jpg',
+                'http://img30.360buyimg.com/popWaterMark/jfs/t1/6040/16/4830/312358/5bdaafd8E5a067672/d6b79716897fad07.jpg',
+                'http://img30.360buyimg.com/popWaterMark/jfs/t1/9947/40/4474/172305/5bdaafd8E6f860b56/d340bbf597b6a960.jpg',
+                'http://img30.360buyimg.com/popWaterMark/jfs/t1/2587/4/13844/367473/5bdaafd8E97b8e938/20ae4a0eb2a7cd28.jpg'
+            ]
         }
     }
     componentDidMount() {
@@ -112,6 +119,11 @@ class Index extends Component {
                 <View className="goodsinfo__spec goodsinfo__spac--last">
                     <View className="at-row at-row--wrap">
                         <View className="at-col at-col-3">商品介绍</View>
+                        {this.state.introductionImgage.map((item, index) => {
+                            return (
+                                <Image key={index} src={item} className="goodsinfo__introduction"></Image>
+                            )
+                        })}
                     </View>
                 </View>
 
@@ -121,7 +133,7 @@ class Index extends Component {
                             return (
                                 <View className='at-col at-col-2 goodsinfo__operator__short' key={item.name}>
                                     {item.name == '购物袋' && <AtBadge value={this.state.cartCount} maxValue={99}>
-                                        <View className={`at-icon ${item.icon} goodsinfo__operator__icon`} onClick={this.redirectCart}>
+                                        <View className={`at-icon ${item.icon} goodsinfo__operator__icon goodsinfo__operator--badge`} onClick={this.redirectCart}>
                                             <Label className="goodsinfo__operator__label">{item.name}</Label>
                                         </View>
                                     </AtBadge>}

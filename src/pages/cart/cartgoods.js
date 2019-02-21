@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { AtSwipeAction, AtInputNumber } from 'taro-ui'
 import HBCheckbox from '../../components/Checkbox/index'
-import {parseMoney} from '../../utils/utils'
+import { parseMoney } from '../../utils/utils'
 import './index.scss';
 
 export default class CartGoods extends Taro.Component {
@@ -11,6 +11,11 @@ export default class CartGoods extends Taro.Component {
     }
     updateChecked = (index, checked) => {
         this.props.onChangeChecked(this.props.goodsIndex, index, checked)
+    }
+    toDetail = () => {
+        Taro.navigateTo({
+            url: '/pages/goodsinfo/index'
+        })
     }
     render() {
         return (
@@ -35,7 +40,7 @@ export default class CartGoods extends Taro.Component {
                                     <HBCheckbox size="small" checked={item.checked} onChange={this.updateChecked.bind(this, index)}></HBCheckbox>
                                 </View>
                                 <View className='at-col at-col-3'>
-                                    <Image className="cart__goods__img" src={item.image} />
+                                    <Image className="cart__goods__img" src={item.image} onClick={this.toDetail} />
                                 </View>
                                 <View className='at-col at-col-8'>
                                     <View className="cart__goods__label">商品名称:{item.name}</View>
