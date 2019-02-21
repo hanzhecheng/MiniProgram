@@ -2,6 +2,7 @@ import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { AtSwipeAction, AtInputNumber } from 'taro-ui'
 import HBCheckbox from '../../components/Checkbox/index'
+import {parseMoney} from '../../utils/utils'
 import './index.scss';
 
 export default class CartGoods extends Taro.Component {
@@ -40,7 +41,7 @@ export default class CartGoods extends Taro.Component {
                                     <View className="cart__goods__label">商品名称:{item.name}</View>
                                     <View className="cart__goods__label">商品描述:{item.desc}</View>
                                     <View className="cart__goods__label">商品规格:{item.unit}</View>
-                                    <View className="cart__goods__label">商品价格:{item.price}</View>
+                                    <View className="cart__goods__label">商品价格:{parseMoney(item.price)}</View>
                                     <View>
                                         <AtInputNumber
                                             min={0}

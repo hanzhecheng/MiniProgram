@@ -1,6 +1,8 @@
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import GoodsInfo from '../../components/GoodsList/index'
+import Border from '../../components/Boder/index'
+import {parseMoney} from '../../utils/utils'
 import './index.scss'
 export default class Index extends Taro.Component {
     constructor(props) {
@@ -164,7 +166,7 @@ export default class Index extends Taro.Component {
                         return (
                             <View className="confirmorder__money__item" key={index}>
                                 <Text>{item.name}</Text>
-                                <Text>¥{item.money.toFixed(2)}</Text>
+                                <Text>¥{parseMoney(item.money)}</Text>
                             </View>
                         )
                     })}
@@ -172,7 +174,7 @@ export default class Index extends Taro.Component {
                 <View className="confirmorder__amount">
                     <View className='at-row at-row--wrap'>
                         <View className='at-col at-col-2 confirmorder__amount__title'>应付金额:</View>
-                        <View className='at-col at-col-7 confirmorder__amount__real'>¥{this.state.amount}</View>
+                        <View className='at-col at-col-7 confirmorder__amount__real'>¥{parseMoney(this.state.amount)}</View>
                         <View className='at-col at-col-3 '>
                             <Button className="confirmorder__amount__btn" onClick={this.onConfirm}>确认订单</Button>
                         </View>

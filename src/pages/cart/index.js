@@ -4,6 +4,7 @@ import { AtButton } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import CartGoods from './cartgoods'
 import HBCheckbox from '../../components/Checkbox/index'
+import {parseMoney} from '../../utils/utils'
 import './index.scss';
 class Index extends Component {
     config = {
@@ -257,7 +258,7 @@ class Index extends Component {
                             >全选</HBCheckbox>
                         </View>
                         <View className='at-col at-col-6 cart--center'>
-                            共计:{this.state.totalAmount}
+                            共计:{parseMoney(this.state.totalAmount)}
                         </View>
                         <View className='at-col at-col-3'>
                             <Button className="cart__calc__button" disabled={this.state.calcBtnDisabled} onClick={this.onSettle}>结算</Button>
