@@ -38,9 +38,7 @@ class Index extends Component {
     }
 
     reGetCode = () => {
-        Taro.getSystemInfo().then(res => {
-            console.log(res)
-        })
+      
         let randomCode = Math.floor(Math.random() * 100000).toString().padStart(6, '0')
         this.setState({
             code: randomCode,
@@ -51,7 +49,7 @@ class Index extends Component {
     }
 
     getCode = (e) => {
-        console.log(e)
+     
         Taro.showLoading().then(res => {
             let randomCode = Math.floor(Math.random() * 100000).toString().padStart(6, '0')
             this.setState({

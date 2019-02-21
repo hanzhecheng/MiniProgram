@@ -36,12 +36,19 @@ class Index extends Component {
 
     }
     onChange = () => {
+        Taro.setStorageSync("showgoods", false)
         Taro.navigateTo({
             url: "/pages/search/index"
         })
     }
     handleClick = (currentTab) => {
         this.setState({ currentTab })
+    }
+    toSearchResult = () => {
+        Taro.setStorageSync("showgoods", true)
+        Taro.navigateTo({
+            url: "/pages/search/index"
+        })
     }
     render() {
 
@@ -57,29 +64,29 @@ class Index extends Component {
                     scrollTop='0'
                     enableBackToTop
                 >
-                    <View style='height:35vh;'>
+                    <View style='height:35vh;' onClick={this.toSearchResult}>
                         <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg"></Image>
                     </View>
-                    <View style='height:20vh;padding:10px 60px;margin:20px 0;'>
+                    <View style='height:20vh;padding:10px 60px;margin:20px 0;' onClick={this.toSearchResult}>
                         <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1546928195687.svg"></Image>
                     </View>
                     <View style='height:30vh;'>
                         <AtTabs current={this.state.currentTab} tabList={this.state.tabList} onClick={this.handleClick}>
                             <AtTabsPane current={this.state.currentTab} index={0} >
-                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg"></Image>
+                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg" onClick={this.toSearchResult}></Image>
                             </AtTabsPane>
-                            <AtTabsPane current={this.state.currentTab} index={1}>
-                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg"></Image>
+                            <AtTabsPane current={this.state.currentTab} index={1} >
+                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg" onClick={this.toSearchResult}></Image>
                             </AtTabsPane>
                         </AtTabs>
                     </View>
-                    <View style='height:20vh;padding:10px 60px;margin:20px 0;'>
+                    <View style='height:20vh;padding:10px 60px;margin:20px 0;' onClick={this.toSearchResult}>
                         <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1546928213926.svg"></Image>
                     </View>
                     <View className='at-row  at-row--wrap'>
-                        {this.state.recommond.map((item,index) => {
+                        {this.state.recommond.map((item, index) => {
                             return (
-                                <View className='at-col at-col-6 home__recommend' key={index}>
+                                <View className='at-col at-col-6 home__recommend' key={index} onClick={this.toSearchResult}>
                                     <Image className="home__img" src={item.image}></Image>
                                 </View>
                             )

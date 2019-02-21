@@ -105,6 +105,24 @@ export default class Index extends Taro.Component {
             ]
         }
     }
+    config = {
+        navigationBarTitleText: '浏览历史',
+        enablePullDownRefresh: true,
+        backgroundTextStyle: 'dark',
+    }
+    onPullDownRefresh() {
+        setTimeout(function () {
+            Taro.stopPullDownRefresh() // 停止下拉刷新
+        }, 2000)
+    }
+    onReachBottom() {
+        Taro.showLoading().then(res => {
+            setTimeout(function () {
+                Taro.hideLoading()
+            }, 1500)
+
+        })
+    }
     onRedirect = () => {
         Taro.navigateTo({
             url: "/pages/goodsinfo/index"

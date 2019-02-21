@@ -18,6 +18,7 @@ class SearchCondition extends Component {
     }
     setCurrent = (selectedIndex) => {
         this.setState({ selectedIndex })
+        this.props.onReSort()
     }
     render() {
         return (
