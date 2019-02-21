@@ -97,7 +97,8 @@ class Index extends Component {
             type2url: {
                 'shippingaddress': '/pages/shippingaddress/index',
                 'viewhistory': '/pages/viewhistory/index',
-                'allorder': '/pages/allorder/index'
+                'allorder': '/pages/allorder/index',
+                'myfocus': '/pages/myfocus/index'
             }
         }
     }
@@ -105,7 +106,13 @@ class Index extends Component {
 
     }
 
-    redirectToUrl = (type) => {
+    redirectToUrl = (type, status) => {
+        console.log(type, status)
+        if (status) {
+            Taro.setStorageSync("orderstatus", status)
+        } else {
+            Taro.setStorageSync("orderstatus", '')
+        }
         Taro.navigateTo({
             url: this.state.type2url[type]
         })
@@ -141,7 +148,7 @@ class Index extends Component {
                 </View>
 
                 <View className="user__focusinfo">
-                    <View className="user__focusinfo__flex">
+                    <View className="user__focusinfo__flex" onClick={this.redirectToUrl.bind(this, 'myfocus')}>
                         <View className="user__focusinfo__count">0</View>
                         <View className="user__focusinfo__title">我的关注</View>
                     </View>
@@ -151,7 +158,7 @@ class Index extends Component {
                     </View>
                 </View>
 
-                <UserGrid datas={this.state.orderdatas} main="我的订单" all="查看全部订单" onAllOrder={this.redirectToUrl.bind(this, 'allorder')}></UserGrid>
+                <UserGrid datas={this.state.orderdatas} main="我的订单" all="查看全部订单" onRedirect={this.redirectToUrl.bind(this, 'allorder')}></UserGrid>
 
                 <UserGrid datas={this.state.assetdatas} main="我的资产"></UserGrid>
 

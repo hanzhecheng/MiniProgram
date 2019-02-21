@@ -28,7 +28,8 @@ class App extends Component {
       'pages/shippingaddress/index',
       'pages/addaddress/index',
       'pages/viewhistory/index',
-      'pages/allorder/index'
+      'pages/allorder/index',
+      'pages/myfocus/index'
     ],
     window: {
       backgroundTextStyle: 'light',

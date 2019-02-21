@@ -526,12 +526,14 @@ export default class Index extends Taro.Component {
     componentWillMount() {
         let { goodsList } = this.state
         let orderStatus = Taro.getStorageSync("orderstatus")
-        console.log(orderStatus)
         if (orderStatus) {
             goodsList = goodsList.filter(item => item.statusname == orderStatus)
             this.setState({ goodsList })
+            Taro.setNavigationBarTitle({ title: orderStatus })
+        } else {
+            Taro.setNavigationBarTitle({ title: '全部订单' })
         }
-       
+
     }
     render() {
         return (
