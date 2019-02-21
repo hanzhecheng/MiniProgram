@@ -4,7 +4,7 @@ import { AtButton } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import CartGoods from './cartgoods'
 import HBCheckbox from '../../components/Checkbox/index'
-import {parseMoney} from '../../utils/utils'
+import { parseMoney } from '../../utils/utils'
 import './index.scss';
 class Index extends Component {
     config = {
@@ -172,6 +172,12 @@ class Index extends Component {
         this.setState({ goodsList })
         this.calcTotalAmount()
     }
+    onClosed = (shopindex, goodsindex) => {
+        let goodsList = this.state.goodsList
+        goodsList[shopindex].list[goodsindex].isOpened = false
+        this.setState({ goodsList })
+        this.calcTotalAmount()
+    }
     onCheckAll = (checked) => {
         this.setState({
             allChecked: checked
@@ -237,6 +243,7 @@ class Index extends Component {
                                             onChangeChecked={this.onChangeChecked}
                                             items={item.list}
                                             goodsIndex={index}
+                                            onClosed={this.onClosed}
                                             onChangeNum={this.changeNum}
                                             onHandleClick={this.handleClick}
                                             onHandleSingle={this.handleSingle}

@@ -27,6 +27,7 @@ export default class CartGoods extends Taro.Component {
                             isOpened={item.isOpened}
                             onOpened={this.props.onHandleSingle.bind(this, this.props.goodsIndex, index)}
                             onClick={this.props.onHandleClick.bind(this, this.props.goodsIndex, index)}
+                            onClosed={this.props.onClosed.bind(this, this.props.goodsIndex, index)}
                             options={[
                                 {
                                     text: '删除',
