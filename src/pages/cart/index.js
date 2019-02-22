@@ -195,14 +195,18 @@ class Index extends Component {
 
     calcTotalAmount() {
         let goodsList = this.state.goodsList
-        let totalAmount = 0, calcBtnDisabled = false;
+        let totalAmount = 0, calcBtnDisabled = false, allChecked = true;
         goodsList.forEach(item => {
+            if (!item.checked) {
+                allChecked = false
+            }
             item.list.forEach(items => {
                 totalAmount += (items.checked ? items.price * items.num : 0)
             })
         })
+
         calcBtnDisabled = totalAmount === 0
-        this.setState({ totalAmount, calcBtnDisabled })
+        this.setState({ totalAmount, calcBtnDisabled, allChecked })
     }
     onSettle = () => {
         Taro.navigateTo({
