@@ -32,32 +32,11 @@ class Index extends Component {
                     value: '待评价'
                 },
                 {
-                    image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-                    value: '售后服务'
-                }
-            ],
-            assetdatas: [
-                {
-                    image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-                    value: '购物券'
-                },
-                {
-                    image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
-                    value: '线下卡'
-                },
-                {
-                    image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
-                    value: '停车缴费'
-                },
-                {
-                    image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-                    value: '预存增值'
-                },
-                {
                     image: '',
                     value: ''
                 }
             ],
+           
             customerdatas: [
                 {
                     image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
@@ -82,15 +61,15 @@ class Index extends Component {
             ],
             likedatas: [
                 {
-                    image: 'https://img.hbunion.com/upload/image/201810/1539667680540.jpg',
+                    image: '//pic11.secooimg.com/product/300/300/52/50/42865a9e1d2a49939c830c6d5e6f5d05.jpg',
                     value: '¥12313'
                 },
                 {
-                    image: 'https://img.hbunion.com/upload/image/201810/1539667680540.jpg',
+                    image: 'http://pic11.secooimg.com/product/240/240/10/57/e92f6f3f60ea44f68dbb5ca5d23ec505.jpg',
                     value: '¥2500'
                 },
                 {
-                    image: 'https://img.hbunion.com/upload/image/201810/1539667680540.jpg',
+                    image: 'http://pic11.secooimg.com/product/240/240/52/53/45f6b6825fd74f628c59122c748c1e5f.jpg',
                     value: '¥91'
                 },
             ],
@@ -137,7 +116,7 @@ class Index extends Component {
                     </View>
                     <View className="user__baseinfo">
                         {this.state.userName && <View className="user__name">{this.state.userName}</View>}
-                        {this.state.userName && <View className="user__membertype">函百会员</View>}
+                        {this.state.userName && <View className="user__membertype">钻石会员</View>}
                         {!this.state.userName && <Button open-type="getUserInfo" lang="zh_CN" onGetUserInfo={this.getUserInfo} className="user__login">
                             登录
                         </Button>}
@@ -159,8 +138,6 @@ class Index extends Component {
                 </View>
 
                 <UserGrid datas={this.state.orderdatas} main="我的订单" all="查看全部订单" onRedirect={this.redirectToUrl.bind(this, 'allorder')}></UserGrid>
-
-                <UserGrid datas={this.state.assetdatas} main="我的资产"></UserGrid>
 
                 <UserGrid datas={this.state.customerdatas} main="客服中心"></UserGrid>
 

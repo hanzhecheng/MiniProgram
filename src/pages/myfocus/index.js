@@ -19,46 +19,46 @@ export default class Index extends Taro.Component {
             goods: {
                 list: [
                     {
-                        image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                        name: '奶粉',
-                        unit: '瓶',
-                        desc: '高级奶粉，品质好，价格低',
+                        image: 'http://pic11.secooimg.com/product/240/240/54/50/625b8cfe7eb84906b3c437c788768bd7.jpg',
+                        name: '钻石女士耳钉',
+                        unit: '个',
+                        desc: '耳钉/耳饰/首饰',
                         price: '12000',
                         isOpened: false,
                         num: 1
                     },
                     {
-                        image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                        name: '奶粉',
-                        unit: '瓶',
-                        desc: '高级奶粉，品质好，价格低',
+                        image: 'http://pic11.secooimg.com/product/240/240/98/97/ba7e8521f6484f7dbb0ecc15d2c890c1.jpg',
+                        name: '10分18K金钻石',
+                        unit: '个',
+                        desc: '耳钉/耳饰/首饰',
                         price: '12000',
                         isOpened: false,
                         num: 1
                     },
                     {
-                        image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                        name: '奶粉',
-                        unit: '瓶',
-                        desc: '高级奶粉，品质好，价格低',
+                        image: 'http://pic11.secooimg.com/product/240/240/55/53/75f8f7069ac8442b8951db32cf3e97c2.jpg',
+                        name: '珍珠开口手镯/手圈',
+                        unit: '个',
+                        desc: '耳钉/耳饰/首饰',
                         price: '12000',
                         isOpened: false,
                         num: 1
                     },
                     {
-                        image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                        name: '奶粉',
-                        unit: '瓶',
-                        desc: '高级奶粉，品质好，价格低',
+                        image: 'http://pic11.secooimg.com/product/240/240/53/54/5676144383aa4d03b233a286b15eec08.jpg',
+                        name: '时尚潮人女指环',
+                        unit: '个',
+                        desc: '耳钉/耳饰/首饰',
                         price: '12000',
                         isOpened: false,
                         num: 1
                     },
                     {
-                        image: 'http://img.hbunion.com/upload/image/201901/1547188839089.png',
-                        name: '奶粉',
-                        unit: '瓶',
-                        desc: '高级奶粉，品质好，价格低',
+                        image: 'http://pic11.secooimg.com/product/240/240/97/57/a968072218bd46baaa640eaff95058f0.jpg',
+                        name: '简约时尚项坠女锁骨链',
+                        unit: '个',
+                        desc: '耳钉/耳饰/首饰',
                         price: '12000',
                         isOpened: false,
                         num: 1
@@ -66,6 +66,9 @@ export default class Index extends Taro.Component {
                 ]
             }
         }
+    }
+    config = {
+        navigationBarTitleText: '我的关注'
     }
     handleClick = (current) => {
         this.setState({ current })

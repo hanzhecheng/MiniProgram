@@ -4,40 +4,31 @@ import { AtTabs, AtTabsPane } from 'taro-ui'
 import TabBar from '../../components/TabBar/index'
 import './index.scss';
 const myCategory = [{
-    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
-    value: '领取中心'
+    image: '//pic11.secooimg.com/product/300/300/98/10/bf5450337ffe4ed78b05104460422f80.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
-    value: '找折扣'
+    image: '//pic11.secooimg.com/product/300/300/99/98/cb356ea56999483793a8c7ad75c3f22c.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
-    value: '领会员'
+    image: '//pic11.secooimg.com/product/300/300/98/98/bbe700268686478bb3e3dd86f33f66a6.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
-    value: '领取中心'
+    image: '//pic11.secooimg.com/product/300/300/52/50/42865a9e1d2a49939c830c6d5e6f5d05.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
-    value: '找折扣'
+    image: '//pic11.secooimg.com/product/300/300/48/97/0a90c6ab49724053a5cfe1cf6d16d8c4.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
-    value: '领会员'
+    image: 'http://pic11.secooimg.com/product/240/240/10/57/e92f6f3f60ea44f68dbb5ca5d23ec505.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
-    value: '领取中心'
+    image: 'http://pic11.secooimg.com/product/240/240/48/57/09c6bdb4a6414fae9750b47e1dddc18a.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
-    value: '找折扣'
+    image: 'http://pic11.secooimg.com/product/240/240/99/54/c62a094d931a4d9d8a8d571582ebad6f.jpg',
 },
 {
-    image: 'http://img.hbunion.com/upload/image/201811/1541747029694.jpg',
-    value: '领会员'
+    image: 'http://pic11.secooimg.com/product/240/240/52/53/45f6b6825fd74f628c59122c748c1e5f.jpg',
 }]
 class Index extends Component {
     config = {
@@ -50,14 +41,14 @@ class Index extends Component {
             currentTabs: 0,
             value: '',
             tabList: [
-                { title: '母婴' },
+                { title: '包袋' },
+                { title: '腕表' },
                 { title: '珠宝' },
-                { title: '箱包' },
-                { title: '洗护' },
-                { title: '美妆' },
-                { title: '服装' },
-                { title: '鞋靴' },
-                { title: '食品' }
+                { title: '服饰' },
+                { title: '鞋履' },
+                { title: '配饰' },
+                { title: '运动' },
+                { title: '家居' }
             ],
             categorys: [],
 

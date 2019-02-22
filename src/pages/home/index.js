@@ -12,12 +12,12 @@ class Index extends Component {
         this.state = {
             current: 0,
             currentTab: 0,
-            tabList: [{ title: '女士' }, { title: '母婴' }],
+            tabList: [{ title: '国际品牌' }, { title: '热门推荐' }],
             recommond: [
-                { image: 'https://img.hbunion.com/upload/image/201810/1539667680540.jpg' },
-                { image: 'http://img.hbunion.com/upload/image/201811/1541665683631.jpg' },
-                { image: 'http://img.hbunion.com/upload/image/201811/1541579952866.jpg' },
-                { image: 'http://img.hbunion.com/upload/image/201811/1541493391947.jpg' },
+                { image: '//pic11.secooimg.com/product/300/300/51/50/32ea0f1b2b5a4a53bf50c718079d0353.jpg' },
+                { image: '//pic11.secooimg.com/product/300/300/99/55/c7c52761822b4e299f87eb75800c3594.jpg' },
+                { image: '//pic11.secooimg.com/product/300/300/99/57/c9d8a373cb7d43b39f3c664a70c38074.jpg' },
+                { image: '//pic11.secooimg.com/product/300/300/56/49/81884b533dfd402b97938df776fad82f.jpg' },
             ]
         }
     }
@@ -65,24 +65,20 @@ class Index extends Component {
                     enableBackToTop
                 >
                     <View style='height:35vh;' onClick={this.toSearchResult}>
-                        <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg"></Image>
+                        <Image className="home__img" src="//pic10.secooimg.com/push/18/11/31870faf4d624ab7873c02f59da6004b.jpg"></Image>
                     </View>
-                    <View style='height:20vh;padding:10px 60px;margin:20px 0;' onClick={this.toSearchResult}>
-                        <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1546928195687.svg"></Image>
-                    </View>
+                   
                     <View style='height:30vh;'>
                         <AtTabs current={this.state.currentTab} tabList={this.state.tabList} onClick={this.handleClick}>
                             <AtTabsPane current={this.state.currentTab} index={0} >
-                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg" onClick={this.toSearchResult}></Image>
+                                <Image className="home__img" src="//pic13.secooimg.com/push/18/11/ad48819e0e524d72a31dfb902561f744.jpg" onClick={this.toSearchResult}></Image>
                             </AtTabsPane>
                             <AtTabsPane current={this.state.currentTab} index={1} >
-                                <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1547191557819.jpg" onClick={this.toSearchResult}></Image>
+                                <Image className="home__img" src="//pic12.secooimg.com/push/18/11/ab8194828ffc4a5a91202b5ac17c241d.jpg" onClick={this.toSearchResult}></Image>
                             </AtTabsPane>
                         </AtTabs>
                     </View>
-                    <View style='height:20vh;padding:10px 60px;margin:20px 0;' onClick={this.toSearchResult}>
-                        <Image className="home__img" src="http://img.hbunion.com/upload/image/201901/1546928213926.svg"></Image>
-                    </View>
+                 
                     <View className='at-row  at-row--wrap'>
                         {this.state.recommond.map((item, index) => {
                             return (

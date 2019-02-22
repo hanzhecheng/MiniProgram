@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Image, Swiper, SwiperItem, Label } from '@tarojs/components';
 import { AtBadge } from 'taro-ui'
+import { parseMoney } from '../../utils/utils'
 import './index.scss';
 class Index extends Component {
     config = {
@@ -9,17 +10,17 @@ class Index extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: "诺贝能/Nutrilon",
-            desc: "诺贝能奶粉(测试商品,仅供内部人员购买)",
-            price: "200",
+            name: "善宁/Shineing",
+            desc: "18K金排戒群镶钻石戒指时尚女戒钻戒首饰",
+            price: "1399",
             artno: '3077101',
-            store: '苏州美罗百货',
-            brand: '诺贝能',
+            store: '真闪亮珠宝店',
+            brand: '真闪亮',
             spec: '',
             images: [
-                'http://img.hbunion.com/upload/image/201810/1539075406293.jpg',
-                'http://img.hbunion.com/upload/image/201811/1541747611194.jpg',
-                'http://img.hbunion.com/upload/image/201811/1541747029694.jpg'
+                'http://pic11.secooimg.com/product/500/500/53/51/5382c1805a0448d2b88e3b6fac546a27.jpg',
+                'http://pic11.secooimg.com/product/500/500/10/97/da66483c8d224ee58b8ef7e9cf21413c.jpg',
+                'http://pic11.secooimg.com/product/500/500/50/97/2a5b58fa98f54ddb9225199abe548974.jpg'
             ],
             operator_short: [
                 { name: '购物袋', icon: 'at-icon-shopping-bag' },
@@ -28,11 +29,11 @@ class Index extends Component {
             ],
             cartCount: 0,
             introductionImgage: [
-                'http://img30.360buyimg.com/popWaterMark/jfs/t1/9483/36/4450/442964/5bdaafd8E9ca94c84/c6b59a0865f38bda.jpg',
-                'http://img30.360buyimg.com/popWaterMark/jfs/t1/6306/14/4814/94299/5bdaafd8Ed7af866c/2b9dd3361d3c3b86.jpg',
-                'http://img30.360buyimg.com/popWaterMark/jfs/t1/6040/16/4830/312358/5bdaafd8E5a067672/d6b79716897fad07.jpg',
-                'http://img30.360buyimg.com/popWaterMark/jfs/t1/9947/40/4474/172305/5bdaafd8E6f860b56/d340bbf597b6a960.jpg',
-                'http://img30.360buyimg.com/popWaterMark/jfs/t1/2587/4/13844/367473/5bdaafd8E97b8e938/20ae4a0eb2a7cd28.jpg'
+                'http://pic12.secooimg.com/imgextra/1/4CAQ/52/49/1ZdGu941f2b4b4679c4c05a9f1aace91e6acba.jpg',
+                'http://pic12.secooimg.com/imgextra/1/4CAQ/97/49/1ZdGuaa16f0e40f1de429c9d70e2878a1a48ac.jpg',
+                'http://pic12.secooimg.com/imgextra/1/4CAQ/54/55/1ZdGua6719ffe4c7cb49309e5a46eff8b14cc1.jpg',
+                'http://pic12.secooimg.com/imgextra/1/4CAQ/55/51/1ZdGua73ed16b970cb43c193ced84c9999524a.jpg',
+                'http://pic12.secooimg.com/imgextra/1/4CAQ/51/10/1ZdGub3ed88e4d781941d4acf4af7db09b3ffc.jpg'
             ]
         }
     }
@@ -83,7 +84,7 @@ class Index extends Component {
                     </Swiper>
                     <View className="goodsinfo__name">{this.state.name}</View>
                     <View className="goodsinfo__desc">{this.state.desc}</View>
-                    <View className="goodsinfo__price">¥{this.state.price}</View>
+                    <View className="goodsinfo__price">¥{parseMoney(this.state.price)}</View>
                 </View>
 
                 <View className="goodsinfo__spec">

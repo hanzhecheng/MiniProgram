@@ -30,7 +30,7 @@ export default class GoodsInfo extends Taro.Component {
                         备注信息
                     </View>
                     <View>
-                        <Textarea className="hb__goods__textarea" placeholder="限45个字,提示:请勿填写有关支付、收货、发票方面的信息" maxlength={45}></Textarea>
+                        <Textarea className="hb__goods__textarea" placeholder="限45个字" maxlength={45}></Textarea>
                     </View>
 
                 </View>}

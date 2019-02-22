@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-
+import { parseMoney } from '../../utils/utils'
 import './index.scss'
 
 class SearchResult extends Component {
@@ -14,7 +14,7 @@ class SearchResult extends Component {
                                 <Image className="search__result__goods__image" src={item.image}></Image>
                                 <View className="search__result__goods__name">{item.name}</View>
                                 <View className="search__result__goods__desc">{item.desc}</View>
-                                <View className="search__result__goods__price">¥{item.price}</View>
+                                <View className="search__result__goods__price">¥{parseMoney(item.price)}</View>
                             </View>
                         )
                     })}

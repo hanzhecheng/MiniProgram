@@ -6,27 +6,27 @@ export default class Index extends Taro.Component {
         this.state = {
             addresslist: [
                 {
-                    name: '韩喆成',
+                    name: '路人甲',
                     phone: '156****1281',
-                    address: '河南省/濮阳市/华龙区/阔巷22号 美罗全球精品购',
+                    address: '河南省/濮阳市/华龙区/绿城花园',
                     isDefault: true
                 },
                 {
-                    name: '吴靖',
+                    name: '路人乙',
                     phone: '138****4382',
-                    address: '江苏省/淮安市/洪泽市/阔巷22号 美罗全球精品购',
+                    address: '江苏省/淮安市/洪泽市/万达中心',
                     isDefault: false
                 },
                 {
-                    name: '王凯',
+                    name: '路人丙',
                     phone: '180****7359',
-                    address: '江苏省/苏州市/姑苏区/阔巷22号 美罗全球精品购',
+                    address: '江苏省/苏州市/姑苏区/保利国际',
                     isDefault: false
                 },
                 {
-                    name: '鲁人',
+                    name: '路人丁',
                     phone: '156****7568',
-                    address: '天津市/和平区/南市街道/阔巷22号 美罗全球精品购',
+                    address: '天津市/和平区/南市街道/恒大中心',
                     isDefault: false
                 },
 
