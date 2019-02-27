@@ -1,10 +1,8 @@
-import Taro, {
-  Component
-} from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
 import Home from './pages/home'
 import './app.scss'
-import 'taro-ui/dist/style/index.scss' //taro-ui组件的样式
+import 'taro-ui/dist/style/index.scss' //taro-ui组件的样式/
 
 class App extends Component {
 

@@ -23,4 +23,8 @@ class SearchResult extends Component {
         )
     }
 }
+SearchResult.defaultProps = {
+    goods: [],
+    onRedirect: () => { }
+}
 export default SearchResult
