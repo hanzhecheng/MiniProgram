@@ -81,9 +81,6 @@ class Index extends Component {
             }
         }
     }
-    componentDidMount() {
-
-    }
 
     redirectToUrl = (type, status) => {
         console.log(type, status)

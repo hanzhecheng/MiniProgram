@@ -28,7 +28,7 @@ export default class Index extends Taro.Component {
         addressinfo[type] = value
         this.setState({ addressinfo })
     }
-    componentDidMount() {
+    componentWillMount() {
         let addressinfo = Taro.getStorageSync("addressinfo")
         if (addressinfo) {
             let address = addressinfo.address

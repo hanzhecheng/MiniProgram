@@ -8,12 +8,12 @@ import SearchCondition from './searchCondition'
 import './index.scss';
 const GOODS = [
     { image: 'http://pic11.secooimg.com/product/240/240/54/50/625b8cfe7eb84906b3c437c788768bd7.jpg', name: '商品1', desc: '说的是打开房间啊', price: '2500' },
-    { image:  'http://pic11.secooimg.com/product/240/240/98/97/ba7e8521f6484f7dbb0ecc15d2c890c1.jpg', name: '商品2', desc: '卡拉圣诞节发酵的发', price: '23650' },
-    { image:  'http://pic11.secooimg.com/product/240/240/55/53/75f8f7069ac8442b8951db32cf3e97c2.jpg', name: '商品3', desc: '撒旦苦涩的风景啊', price: '125' },
+    { image: 'http://pic11.secooimg.com/product/240/240/98/97/ba7e8521f6484f7dbb0ecc15d2c890c1.jpg', name: '商品2', desc: '卡拉圣诞节发酵的发', price: '23650' },
+    { image: 'http://pic11.secooimg.com/product/240/240/55/53/75f8f7069ac8442b8951db32cf3e97c2.jpg', name: '商品3', desc: '撒旦苦涩的风景啊', price: '125' },
     { image: 'http://pic11.secooimg.com/product/240/240/53/54/5676144383aa4d03b233a286b15eec08.jpg', name: '商品4', desc: '啊打发打发打发', price: '3654' },
-    { image:  'http://pic11.secooimg.com/product/240/240/97/57/a968072218bd46baaa640eaff95058f0.jpg', name: '商品5', desc: '啊打发打发打发的是发放打发法', price: '235641' },
+    { image: 'http://pic11.secooimg.com/product/240/240/97/57/a968072218bd46baaa640eaff95058f0.jpg', name: '商品5', desc: '啊打发打发打发的是发放打发法', price: '235641' },
     { image: 'http://pic11.secooimg.com/product/240/240/97/48/a026021664c547f4931db91014f07d36.jpg', name: '商品6', desc: '啊打发法大师傅发射点发射点法发法大师傅', price: '102541' },
-    { image:  'http://pic11.secooimg.com/product/240/240/51/54/3685eb719b694ceca88ffda0aa36ce4d.jpg', name: '商品1', desc: '说的是打开房间啊', price: '2500' },
+    { image: 'http://pic11.secooimg.com/product/240/240/51/54/3685eb719b694ceca88ffda0aa36ce4d.jpg', name: '商品1', desc: '说的是打开房间啊', price: '2500' },
     { image: 'http://pic11.secooimg.com/product/240/240/98/54/b6df3eaa07c24e339d284dec717b36a1.jpg', name: '商品2', desc: '卡拉圣诞节发酵的发', price: '23650' },
     { image: 'http://pic11.secooimg.com/product/240/240/56/56/88d6fac1329d4398baa438eda5f8fe32.jpg', name: '商品3', desc: '撒旦苦涩的风景啊', price: '125' },
     { image: 'http://pic11.secooimg.com/product/240/240/54/50/625b8cfe7eb84906b3c437c788768bd7.jpg', name: '商品4', desc: '啊打发打发打发', price: '3654' },
@@ -23,7 +23,7 @@ const GOODS = [
     { image: 'http://pic11.secooimg.com/product/240/240/97/57/a968072218bd46baaa640eaff95058f0.jpg', name: '商品2', desc: '卡拉圣诞节发酵的发', price: '23650' },
     { image: 'http://pic11.secooimg.com/product/240/240/97/48/a026021664c547f4931db91014f07d36.jpg', name: '商品3', desc: '撒旦苦涩的风景啊', price: '125' },
     { image: 'http://pic11.secooimg.com/product/240/240/51/54/3685eb719b694ceca88ffda0aa36ce4d.jpg', name: '商品4', desc: '啊打发打发打发', price: '3654' },
-    { image: 'http://pic11.secooimg.com/product/240/240/98/54/b6df3eaa07c24e339d284dec717b36a1.jpg',name: '商品5', desc: '啊打发打发打发的是发放打发法', price: '235641' },
+    { image: 'http://pic11.secooimg.com/product/240/240/98/54/b6df3eaa07c24e339d284dec717b36a1.jpg', name: '商品5', desc: '啊打发打发打发的是发放打发法', price: '235641' },
     { image: 'http://pic11.secooimg.com/product/240/240/48/51/034054b0943c4a42a34106447703bd04.jpg', name: '商品6', desc: '啊打发法大师傅发射点发射点法发法大师傅', price: '102541' }
 ]
 class Index extends Component {
@@ -135,23 +135,29 @@ class Index extends Component {
                     scrollTop='0'
                     enableBackToTop
                 >
-                    {this.state.showSearchResult && <View>
-                        <SearchResult goods={this.state.goodsList} onRedirect={this.toGoosInfo}></SearchResult>
-                    </View>}
-                    {!this.state.showSearchResult && <View>
-                        <SearchGrid title="搜索历史" his
-                            tags={this.state.searchTags}
-                            onClearHistory={this.clearHistory}
-                            onClick={this.onClickTag}
-                        >
-                        </SearchGrid>
-                        <SearchGrid title="热门搜索" hot
-                            tags={this.state.hotTags}
-                            onChangeHot={this.changeHot}
-                            onClick={this.onClickTag}
-                        >
-                        </SearchGrid>
-                    </View>}
+                    {
+                        this.state.showSearchResult &&
+                        <View>
+                            <SearchResult goods={this.state.goodsList} onRedirect={this.toGoosInfo}></SearchResult>
+                        </View>
+                    }
+                    {
+                        !this.state.showSearchResult &&
+                        <View>
+                            <SearchGrid title="搜索历史" his
+                                tags={this.state.searchTags}
+                                onClearHistory={this.clearHistory}
+                                onClick={this.onClickTag}
+                            >
+                            </SearchGrid>
+                            <SearchGrid title="热门搜索" hot
+                                tags={this.state.hotTags}
+                                onChangeHot={this.changeHot}
+                                onClick={this.onClickTag}
+                            >
+                            </SearchGrid>
+                        </View>
+                    }
                 </ScrollView>
 
 

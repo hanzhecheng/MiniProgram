@@ -37,15 +37,7 @@ class Index extends Component {
             ]
         }
     }
-    componentDidMount() {
-        Taro.onUserCaptureScreen(() => {
-            Taro.showToast({
-                title: '成功',
-                icon: 'success',
-                duration: 2000
-            })
-        })
-    }
+  
     previewImage = (index) => {
         Taro.previewImage({
             current: this.state.images[index], // 当前显示图片的http链接

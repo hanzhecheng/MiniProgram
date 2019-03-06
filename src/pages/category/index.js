@@ -54,7 +54,7 @@ class Index extends Component {
 
         }
     }
-    componentDidMount() {
+    componentWillMount() {
         let random = Math.floor(Math.random() * 10) + 1;
         let arr = myCategory.filter((item, index) => {
             return index < random

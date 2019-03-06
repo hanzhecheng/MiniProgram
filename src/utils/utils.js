@@ -1,5 +1,3 @@
-import Taro from '@tarojs/taro';
-
 export function parseMoney(num) {
   num = num.toString().replace(/\$|,/g, '')
   if (isNaN(num)) num = '0'

@@ -125,7 +125,7 @@ export default class Index extends Taro.Component {
     config = {
         navigationBarTitleText: '确认订单'
     }
-    componentDidMount() {
+    componentWillMount() {
         let { moneys } = this.state
         let amount = moneys.reduce((origin, item) => {
             origin += item.money

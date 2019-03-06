@@ -36,9 +36,7 @@ export default class Index extends Taro.Component {
     config = {
         navigationBarTitleText: '收货地址'
     }
-    componentDidMount() {
-
-    }
+  
     addAddress = () => {
         Taro.setStorageSync("addressinfo", '')
         Taro.navigateTo({
