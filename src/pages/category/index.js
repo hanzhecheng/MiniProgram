@@ -91,7 +91,7 @@ class Index extends Component {
                     <View className='at-row at-row--wrap'>
                         {this.state.categorys.map(items => {
                             return (
-                                <Image className="at-col at-col-4 category__img" src={items.image} onClick={this.onRedirectToDetail}></Image>
+                                <Image className="at-col at-col-4 category__img" key={items.image} src={items.image} onClick={this.onRedirectToDetail}></Image>
                             )
                         })}
                     </View>

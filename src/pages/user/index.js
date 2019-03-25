@@ -83,7 +83,6 @@ class Index extends Component {
     }
 
     redirectToUrl = (type, status) => {
-        console.log(type, status)
         if (status) {
             Taro.setStorageSync("orderstatus", status)
         } else {
