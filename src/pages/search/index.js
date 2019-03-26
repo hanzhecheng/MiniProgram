@@ -109,19 +109,16 @@ class Index extends Component {
         setTimeout(function () {
             Taro.stopPullDownRefresh()
         }, 1000)
+
+    }
+    onBottom() {
         let arr = [...this.state.goodsList[0]]
         this.setState((prestate) => ({
             currentPage: prestate.currentPage + 1
         }))
         this.state.goodsList[this.state.currentPage] = arr
         this.forceUpdate()
-    }
-    onReachBottom() {
-        Taro.showToast({
-            title: '成功',
-            icon: 'success',
-            duration: 1500
-        })
+      
     }
 
     render() {
@@ -140,6 +137,7 @@ class Index extends Component {
                 <ScrollView
                     className={`search__result__scrollview ${this.state.showSearchResult ? 'search__result__scrollview--uncondition' : ''}`}
                     scrollY
+                    onScrollToLower={this.onBottom}
                     scrollWithAnimation
                     scrollTop='0'
                     enableBackToTop
