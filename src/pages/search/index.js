@@ -39,7 +39,8 @@ class Index extends Component {
             searchTags: [],
             showSearchResult: false,
             goodsList: [],
-            hotTags: ['iPhone', 'iMac', 'MacBook Pro', 'MacBook Air', '拉杆箱', '运动背心', '笔记本', '点烟器', '电脑', '华为', 'vivo']
+            hotTags: ['iPhone', 'iMac', 'MacBook Pro', 'MacBook Air', '拉杆箱', '运动背心', '笔记本', '点烟器', '电脑', '华为', 'vivo'],
+            currentPage: 0
         }
     }
 
@@ -64,9 +65,11 @@ class Index extends Component {
             Taro.setStorageSync("searchTags", this.state.searchTags)
         }
         this.setState({
-            showSearchResult: true,
-            goodsList: GOODS
+            showSearchResult: true
         })
+        this.state.goodsList[0] = GOODS
+        this.forceUpdate()
+        console.log(this.state.goodsList)
     }
     onReSort = () => {
         let random = Math.floor((Math.random()) * 10) + 1
@@ -105,7 +108,13 @@ class Index extends Component {
     onPullDownRefresh() {
         setTimeout(function () {
             Taro.stopPullDownRefresh()
-        }, 3000)
+        }, 1000)
+        let arr = [...this.state.goodsList[0]]
+        this.setState((prestate) => ({
+            currentPage: prestate.currentPage + 1
+        }))
+        this.state.goodsList[this.state.currentPage] = arr
+        this.forceUpdate()
     }
     onReachBottom() {
         Taro.showToast({
