@@ -112,13 +112,18 @@ class Index extends Component {
 
     }
     onBottom() {
+        Taro.showLoading({
+            title:'数据加载中...'
+        })
         let arr = [...this.state.goodsList[0]]
         this.setState((prestate) => ({
             currentPage: prestate.currentPage + 1
         }))
         this.state.goodsList[this.state.currentPage] = arr
         this.forceUpdate()
-      
+        setTimeout(function(){
+            Taro.hideLoading()
+        },500)
     }
 
     render() {
