@@ -4,9 +4,7 @@ import { parseMoney } from '../../utils/utils'
 import './index.scss'
 
 class SearchResult extends Component {
-    componentDidMount(){
-        console.log(this.props.goods)
-    }
+   
     render() {
         return (
             <View className="search__result">

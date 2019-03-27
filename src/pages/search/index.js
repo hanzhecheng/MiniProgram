@@ -69,7 +69,6 @@ class Index extends Component {
         })
         this.state.goodsList[0] = GOODS
         this.forceUpdate()
-        console.log(this.state.goodsList)
     }
     onReSort = () => {
         let random = Math.floor((Math.random()) * 10) + 1
