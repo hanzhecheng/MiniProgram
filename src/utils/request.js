@@ -32,19 +32,15 @@ export default (options = {
       data
     } = res;
     if (statusCode >= 200 && statusCode < 300) {
-        if (data.status!=='0') {
-            Taro.showToast({
-                title:`${data.errorMessage}`,
-                icon: 'none',
-                mask: true,
-            })
-        }else{
-            return data
-        }
+      return data
     } else {
       Taro.showToast({
         title: `网络请求错误,${errorMsg[statusCode]}`
       })
     }
+  }).catch(err=>{
+    Taro.showToast({
+      title: `网络请求错误,${err}`
+    })
   })
 }

@@ -4,7 +4,7 @@ import { AtSearchBar } from 'taro-ui'
 import SearchGrid from './searchgrid'
 import SearchResult from './searchResult'
 import SearchCondition from './searchCondition'
-
+import request from '../../utils/request'
 import './index.scss';
 const GOODS = [
     { image: 'http://pic11.secooimg.com/product/240/240/54/50/625b8cfe7eb84906b3c437c788768bd7.jpg', name: '商品1', desc: '说的是打开房间啊', price: '2500' },
@@ -108,21 +108,26 @@ class Index extends Component {
         setTimeout(function () {
             Taro.stopPullDownRefresh()
         }, 1000)
-
     }
     onBottom() {
         Taro.showLoading({
-            title:'数据加载中...'
+            title: '数据加载中...'
         })
-        let arr = [...this.state.goodsList[0]]
-        this.setState((prestate) => ({
-            currentPage: prestate.currentPage + 1
-        }))
-        this.state.goodsList[this.state.currentPage] = arr
-        this.forceUpdate()
-        setTimeout(function(){
+        request({
+            url: 'http://localhost:3005/User/closeEvent',
+            method: 'GET',
+            data: {}
+        }).then(res => {
+            let arr = [...this.state.goodsList[0]]
+            this.setState((prestate) => ({
+                currentPage: prestate.currentPage + 1
+            }))
+            this.state.goodsList[this.state.currentPage] = arr
+            this.forceUpdate()
             Taro.hideLoading()
-        },500)
+        }).catch(err => {
+            console.log(err)
+        })
     }
 
     render() {
