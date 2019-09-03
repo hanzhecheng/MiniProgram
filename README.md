@@ -10,4 +10,5 @@
   this.state.goodsList[this.state.currentPage] = arr
   this.forceUpdate()
 ```
-forceUpdate方法将会导致组件的 render()方法被调用，并忽略shouldComponentUpdate()。这将会触发每一个子组件的生命周期方法，涵盖，每个子组件的shouldComponentUpdate() 方法，因此最好避免使用foreUpdate，目前只看到这个方法，后续有新的写法会更新进来
+forceUpdate方法将会导致组件的 render()方法被调用，并忽略shouldComponentUpdate()。这将会触发每一个子组件的生命周期方法，涵盖，每个子组件的shouldComponentUpdate() 方法，因此最好避免使用foreUpdate，目前只看到这个方法，后续有新的写法会更新进来  
+更新:Taro会把组件的state或者data做一次diff，只会更新必要的数据，因此无需使用`forceUpdate`强制更新
